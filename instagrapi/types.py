@@ -312,7 +312,7 @@ class StoryLink(TypesBaseModel):
     webUri: HttpUrl
     x: float = 0.5126011
     y: float = 0.5168225
-    z: float = 0.0
+    z: float = 5.0
     width: float = 0.50998676
     height: float = 0.25875
     rotation: float = 0.0
