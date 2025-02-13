@@ -147,7 +147,7 @@ class StoryBuilder:
                 # x=160.0, y=641.0, z=0, width=400.0, height=88.0,
                 x=round(link_clip_left / self.width, 7),  # e.g. 0.49953705
                 y=round(link_clip_top / self.height, 7),  # e.g. 0.5
-                z=0,
+                z=1000010,
                 width=round(link_clip.size[0] / self.width, 7),  # e.g. 0.50912
                 height=round(link_clip.size[1] / self.height, 7),  # e.g. 0.06875
                 rotation=0.0,
