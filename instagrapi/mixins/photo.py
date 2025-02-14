@@ -607,7 +607,7 @@ class UploadPhotoMixin:
                 "tap_state_str_id": "link_sticker_default",
             },
         }
-        tap_models.append(item)
+                tap_models.append(item)
         story_sticker_ids.append("link_sticker_default")
         if links:
             # instagram allow one link now
