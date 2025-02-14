@@ -27,6 +27,7 @@ from instagrapi.types import (
     StoryMedia,
     StoryMention,
     StorySticker,
+    StoryStickerLink,
     Usertag,
 )
 from instagrapi.utils import date_time_original, dumps
@@ -357,6 +358,7 @@ class UploadPhotoMixin:
         upload_id: str = "",
         mentions: List[StoryMention] = [],
         locations: List[StoryLocation] = [],
+        sticker_link: List[StoryStickerLink] = [],
         links: List[StoryLink] = [],
         hashtags: List[StoryHashtag] = [],
         stickers: List[StorySticker] = [],
@@ -593,7 +595,7 @@ class UploadPhotoMixin:
             self.private_request(
                 "media/validate_reel_url/",
                 {
-                    "url": str(link.url),
+                    "url": str(link.WebUri),
                     "_uid": str(self.user_id),
                     "_uuid": str(self.uuid),
                 },
