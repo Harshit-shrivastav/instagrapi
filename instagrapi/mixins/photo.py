@@ -593,7 +593,7 @@ class UploadPhotoMixin:
             self.private_request(
                 "media/validate_reel_url/",
                 {
-                    "url": str(link.webUri),
+                    "url": str(link.url),
                     "_uid": str(self.user_id),
                     "_uuid": str(self.uuid),
                 },
