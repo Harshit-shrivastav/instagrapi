@@ -437,6 +437,7 @@ class UploadPhotoMixin:
         locations: List[StoryLocation] = [],
         links: List[StoryLink] = [],
         hashtags: List[StoryHashtag] = [],
+        sticker_link: List[StoryStickerLink] = [],
         stickers: List[StorySticker] = [],
         medias: List[StoryMedia] = [],
         extra_data: Dict[str, str] = {},
@@ -589,6 +590,25 @@ class UploadPhotoMixin:
                     "tap_state_str_id": "location_sticker_vibrant",
                 }
                 tap_models.append(item)
+        if sticker_link:
+            for link in sticker_link:
+                item = {
+            "x": link.x,
+            "y": link.y,
+            "z": link.z,
+            "width": link.width,
+            "height": link.height,
+            "rotation": link.rotation,
+            "type": "story_link",
+            "is_sticker": True,
+            "extra": {
+                "link_type": "web",
+                "url": link.url,  # Ensure link object has a valid URL attribute
+                "tap_state_str_id": "link_sticker_default",
+            },
+        }
+        tap_models.append(item)
+        story_sticker_ids.append("link_sticker_default")
         if links:
             # instagram allow one link now
             link = links[0]
